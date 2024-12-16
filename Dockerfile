@@ -42,7 +42,8 @@ RUN apt-get update && \
     rm -f /$EXTENSION_BUNDLE_FILENAME_V4 &&\
     find /FuncExtensionBundles/ -type f -exec chmod 644 {} \;
 
-FROM diffusers/diffusers-pytorch-compile-cuda
+ARG BASE_IMAGE    
+FROM ${BASE_IMAGE}
 
 
 ARG HOST_VERSION
